@@ -1,32 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useState } from "react";
+// import reactLogo from './assets/react.svg'
+import exitIcon from "./assets/exit.svg";
+import "./styles/Reset.css";
+import "./styles/App.css";
+import Header from "./components/Header";
 
-import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
-      <div>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+      <main className="main-section">
+        <section className="left-sidebar">
+          <nav>
+            <ul className="nav-li-items">
+              <li>Navigation</li>
+              <li>Navigation</li>
+              <li>Navigation</li>
+              <li>Navigation</li>
+              <li>Navigation</li>
+              <li>Navigation</li>
+              <li>Navigation</li>
+            </ul>
+          </nav>
+          <button className="exit-button">
+            <span>
+              <figure className="mode-frame">
+                <img className="exit-icon" src={exitIcon}></img>
+              </figure>
+            </span>
+            Exit
+          </button>
+        </section>
+        <section className="graphs-section"></section>
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

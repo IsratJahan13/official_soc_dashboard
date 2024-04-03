@@ -1,0 +1,111 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 1rem;
+  font-family: "Gotham Light";
+  background-color: rgba(252, 224, 209, 1);
+}
+
+/* HEADER MUOKKAUKSIA */
+header {
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: rgba(105, 1, 59, 1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Morion Beta Regular";
+  color: rgba(252, 224, 209, 1);
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+.bc-logo-frame {
+  width: 20%;
+}
+
+.bc-logo {
+  max-width: 100%;
+}
+
+/* BUTTONIEN MUOKKAUKSIA */
+.mode-button,
+.exit-button {
+  background-color: white;
+  color: black;
+  padding: 0.7rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.exit-button {
+  width: 7rem;
+  justify-content: center;
+  margin-block-end: 3rem;
+}
+
+.mode-frame {
+  width: 2rem;
+}
+.darkmode-icon {
+  max-width: 100%;
+  transform: rotate(180deg);
+  margin-inline-start: 0.5rem;
+}
+
+.exit-icon {
+  max-width: 100%;
+  transform: rotate(180deg);
+  margin-inline-end: 0.5rem;
+}
+
+.mode-button:hover,
+.exit-button:hover {
+  background-color: rgba(251, 239, 234, 1);
+  color: rgba(181, 118, 135, 1);
+}
+
+.main-section {
+  margin-block-start: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 50vw;
+}
+
+/* LEFT-SIDEBAR */
+.left-sidebar {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+}
+
+/* NAVIGAATIO MUOKKAUKSIA */
+.nav-li-items {
+  margin-block-start: 7rem;
+  /* border-collapse: collapse; */
+}
+.nav-li-items li {
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px 0 0 5px;
+}
+
+/* GRAPHS-SECTION */
+.graphs-section {
+  background-color: white;
+  border: 1px solid black;
+  flex-grow: 1;
+}
