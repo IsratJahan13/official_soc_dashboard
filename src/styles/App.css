@@ -46,13 +46,39 @@ h1 {
   border-radius: 5px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
-
+.logButton {
+  background-color: white;
+  color: black;
+  padding: 0.7rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  align-items: center;
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem;
+  font: "inherit";
+  cursor: pointer;
+}
 .exit-button {
   width: 7rem;
   justify-content: center;
   margin-block-end: 3rem;
   align-self: center;
+}
+
+.optionButtons {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  padding: 1rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.optionButtons:hover {
+  text-decoration: underline 1px grey;
 }
 
 .mode-frame {
@@ -71,7 +97,8 @@ h1 {
 }
 
 .mode-button:hover,
-.exit-button:hover {
+.exit-button:hover,
+.logButton:hover {
   background-color: rgba(251, 239, 234, 1);
   color: rgba(181, 118, 135, 1);
 }
@@ -82,7 +109,6 @@ h1 {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  height: 50vw;
 }
 
 /* LEFT-SIDEBAR */
@@ -114,4 +140,26 @@ h1 {
   border: 1px solid black;
   border-radius: 0 0 5px 5px;
   flex-grow: 1;
+  padding: 1rem;
+}
+
+.chartLogSection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  margin: 1rem;
+}
+
+.optionsSection {
+  border: 0.5px solid grey;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.oneGraph {
+  border: 0.5px solid black;
+  padding: 2rem;
 }
