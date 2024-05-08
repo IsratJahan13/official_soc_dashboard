@@ -1,0 +1,152 @@
+{
+    "tyo_asema": [
+    {
+      "timestamp": "2024-05-01T00:30:00",
+      "source_ip": "192.168.1.10",
+      "username": "user19",
+      "event_id": 4624,
+      "logon_type": "Interactive",
+      "logon_result": "Success",
+      "process_name": "C:\\Windows\\System32\\cmd.exe"
+    },
+    {
+      "timestamp": "2024-05-02T11:40:00",
+      "source_ip": "192.168.1.40",
+      "username": "attacker",
+      "event_id": 4625,
+      "logon_type": "Interactive",
+      "logon_result": "Failure",
+      "process_name": "C:\\Windows\\System32\\cmd.exe"
+    },
+      {
+        "timestamp": "2024-05-07T11:40:00",
+        "source_ip": "192.168.1.40",
+        "username": "attacker",
+        "event_id": 4625,
+        "logon_type": "Interactive",
+        "logon_result": "Failure",
+        "process_name": "C:\\Windows\\System32\\cmd.exe"
+      },
+      {
+        "timestamp": "2024-05-08T12:19:00",
+        "source_ip": "192.168.1.50",
+        "username": "user7",
+        "event_id": 4625,
+        "logon_type": "Interactive",
+        "logon_result": "Success",
+        "process_name": "C:\\Windows\\System32\\cmd.exe"
+      },
+      {
+        "timestamp": "2024-05-08T22:00:00",
+        "source_ip": "192.168.1.60",
+        "username": "user8",
+        "event_id": 4625,
+        "logon_type": "Interactive",
+        "logon_result": "Failure",
+        "process_name": "C:\\Windows\\System32\\cmd.exe"
+      },
+      {
+        "timestamp": "2024-05-08T22:19:00",
+        "source_ip": "192.168.1.70",
+        "username": "user9",
+        "event_id": 4625,
+        "logon_type": "Interactive",
+        "logon_result": "Success",
+        "process_name": "C:\\Windows\\System32\\cmd.exe"
+      }
+  ],
+  "reititin": [
+    {
+        "timestamp": "2024-05-01T08:30:00",
+        "source_ip": "192.168.1.2",
+        "destination_ip": "203.0.113.30",
+        "destination_port": 443,
+        "protocol": "TCP",
+        "action": "forwarded",
+        "attack_type": null,
+        "attack_traffic": null
+      },
+      {
+        "timestamp": "2024-05-02T08:30:00",
+        "source_ip": "192.168.1.2",
+        "destination_ip": "203.0.113.30",
+        "destination_port": 443,
+        "protocol": "TCP",
+        "action": "forwarded",
+        "attack_type": null,
+        "attack_traffic": null
+      },
+      {
+        "timestamp": "2024-05-08T11:00:00",
+        "source_ip": "192.168.1.4",
+        "destination_ip": "203.0.113.60",
+        "destination_port": 3389,
+        "protocol": "HTTP",
+        "action": "denied",
+        "attack_type": "DDoS",
+        "attack_traffic": "High"
+      },
+      {
+        "timestamp": "2024-05-08T12:00:00",
+        "source_ip": "192.168.1.5",
+        "destination_ip": "203.0.113.70",
+        "destination_port": 123,
+        "protocol": "UDP",
+        "action": "forwarded",
+        "attack_type": null,
+        "attack_traffic": null
+      },
+      {
+        "timestamp": "2024-05-08T13:00:00",
+        "source_ip": "192.168.1.6",
+        "destination_ip": "203.0.113.80",
+        "destination_port": 161,
+        "protocol": "UDP",
+        "action": "blocked",
+        "attack_type": "MalwareActivity",
+        "attack_traffic": null
+      },
+     
+      {
+        "timestamp": "2024-05-08T13:00:00",
+        "source_ip": "192.168.1.20",
+        "destination_ip": "203.0.113.10",
+        "destination_port": 22,
+        "protocol": "SSH",
+        "action": "blocked",
+        "attack_type": null,
+        "attack_traffic": null
+      },
+      {
+        "timestamp": "2024-05-08T13:15:00",
+        "source_ip": "10.0.0.5",
+        "destination_ip": "203.0.113.20",
+        "destination_port": 80,
+        "protocol": "HTTP",
+        "action": "allowed",
+        "attack_type": null,
+        "attack_traffic": null
+      },
+      {
+        "timestamp": "2024-05-08T22:40:00",
+        "source_ip": "203.0.113.100",
+        "destination_ip": "192.168.1.10",
+        "destination_port": 80,
+        "protocol": "HTTP",
+        "action": "denied",
+        "attack_type": "DDoS",
+        "attack_traffic": "High"
+      },
+      {
+        "timestamp": "2024-05-08T23:00:00",
+        "source_ip": "192.168.1.30",
+        "destination_ip": "203.0.113.30",
+        "destination_port": 443,
+        "protocol": "HTTPS",
+        "action": "allowed",
+        "attack_type": null,
+        "attack_traffic": "High"
+      }
+    ]
+
+}

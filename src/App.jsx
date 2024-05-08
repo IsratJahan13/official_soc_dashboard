@@ -4,7 +4,7 @@ import exitIcon from "./assets/exit.svg";
 import "./styles/Reset.css";
 import "./styles/App.css";
 import Header from "./components/Header";
-
+import LogIns from "./components/LogIns";
 
 const App = () => {
   return (
@@ -32,7 +32,9 @@ const App = () => {
             Exit
           </button>
         </section>
-        <section className="graphs-section"></section>
+        <section className="graphs-section">
+          <LogIns />
+        </section>
       </main>
     </>
   );
