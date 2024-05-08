@@ -28,6 +28,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-weight: bold;
+}
+
 .bc-logo-frame {
   width: 20%;
 }
@@ -116,14 +120,14 @@ h1 {
   display: flex;
   flex-direction: column;
   /* flex-grow: 0; */
-  width: 15%;
+  width: 10%;
   justify-content: space-between;
 }
 
 /* NAVIGAATIO MUOKKAUKSIA */
 .nav-li-items {
   margin-block-start: 25%;
-  margin-inline-start: 10%;
+  margin-inline-start: 5%;
   /* border-collapse: collapse; */
 }
 .nav-li-items li {
@@ -143,6 +147,14 @@ h1 {
   padding: 1rem;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.flex-row > * {
+  flex-grow: 1;
+}
 .chartLogSection {
   display: flex;
   flex-direction: row;
@@ -162,4 +174,5 @@ h1 {
 .oneGraph {
   border: 0.5px solid black;
   padding: 2rem;
+  margin: 1rem;
 }

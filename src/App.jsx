@@ -5,6 +5,7 @@ import "./styles/Reset.css";
 import "./styles/App.css";
 import Header from "./components/Header";
 import LogIns from "./components/LogIns";
+import UnusualDataTransfers from "./components/UnusualDataTransfers";
 
 const App = () => {
   return (
@@ -33,7 +34,11 @@ const App = () => {
           </button>
         </section>
         <section className="graphs-section">
-          <LogIns />
+          <div className="flex-row">
+            <LogIns />
+            {/* here israts or fourth component */}
+          </div>
+          <UnusualDataTransfers />
         </section>
       </main>
     </>
