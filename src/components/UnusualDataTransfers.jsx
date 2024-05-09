@@ -145,7 +145,12 @@ const UnusualDataTransfers = () => {
 
     // Prepare data object for the bar chart
     const chartData = {
-      labels: ["Sallitut", "Kielletyt", "Estetyt", "Haittaohjelmatapahtuma"],
+      labels: [
+        "Sallitut",
+        "Kielletyt",
+        "Estetyt",
+        "Korkea määrä siirtoja/ haittaohjelmatapahtuma",
+      ],
       datasets: [
         {
           label: "Tietojen siirrot",
@@ -197,7 +202,7 @@ const UnusualDataTransfers = () => {
         {selectedView === "hour"
           ? "viimeisen tunnin"
           : selectedView === "day"
-          ? "tämän päivän"
+          ? "viimeisen vuorokauden"
           : "viimeisen viikon"}{" "}
         aikana
       </h2>

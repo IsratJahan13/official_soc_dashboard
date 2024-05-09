@@ -21,7 +21,7 @@ const Filter = ({ selectedView, onSelect }) => {
               selectedView === "hour" ? "selected" : ""
             }`}
           >
-            Päivän aikana
+            Viimeisen vuorokauden aikana
           </button>
         </li>
         <li>

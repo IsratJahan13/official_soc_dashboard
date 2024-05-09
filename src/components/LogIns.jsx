@@ -166,7 +166,7 @@ const LogIns = () => {
         {selectedView === "hour"
           ? "viimeisen tunnin"
           : selectedView === "day"
-          ? "tämän päivän"
+          ? "viimeisen vuorokauden"
           : "viimeisen viikon"}{" "}
         aikana
       </h2>
