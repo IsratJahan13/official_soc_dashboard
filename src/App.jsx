@@ -6,6 +6,7 @@ import "./styles/App.css";
 import Header from "./components/Header";
 import LogIns from "./components/LogIns";
 import UnusualDataTransfers from "./components/UnusualDataTransfers";
+import DeviationsFromNormalBehavior from "./components/DaviationsFromNormalBehavior";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         <section className="graphs-section">
           <div className="flex-row">
             <LogIns />
+            <DeviationsFromNormalBehavior />
             {/* here israts or fourth component */}
           </div>
           <UnusualDataTransfers />
