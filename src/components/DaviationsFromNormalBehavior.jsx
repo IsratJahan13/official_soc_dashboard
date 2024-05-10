@@ -65,14 +65,16 @@ const DeviationsFromNormalBehavior = () => {
         filteredData.forEach((entry) => {
           const entryTime = new Date(entry.timestamp);
           if (entryTime >= oneHourAgo && entryTime <= currentTime) {
-            if(entry.username === "attacker") {
-                attacker++;
-            }
-            else if (entry.logon_type === "Interactive" && entry.logon_result === "Success") {
+            if (entry.username === "attacker") {
+              attacker++;
+            } else if (
+              entry.logon_type === "Interactive" &&
+              entry.logon_result === "Success"
+            ) {
               normal++;
             } else if (entry.logon_result === "Failure") {
               failure++;
-            } 
+            }
           }
         });
       } else {
@@ -84,28 +86,32 @@ const DeviationsFromNormalBehavior = () => {
               currentTime.getTime() - 24 * 60 * 60 * 1000
             );
             if (entryTime >= oneDayAgo && entryTime <= currentTime) {
-                if(entry.username === "attacker") {
-                    attacker++;
-                }
-                else if (entry.logon_type === "Interactive" && entry.logon_result === "Success") {
-                  normal++;
-                } else if (entry.logon_result === "Failure") {
-                  failure++;
-                } 
+              if (entry.username === "attacker") {
+                attacker++;
+              } else if (
+                entry.logon_type === "Interactive" &&
+                entry.logon_result === "Success"
+              ) {
+                normal++;
+              } else if (entry.logon_result === "Failure") {
+                failure++;
+              }
             }
           } else if (selectedView === "week") {
             const oneWeekAgo = new Date(
               currentTime.getTime() - 7 * 24 * 60 * 60 * 1000
             );
             if (entryTime >= oneWeekAgo && entryTime <= currentTime) {
-                if(entry.username === "attacker") {
-                    attacker++;
-                }
-                else if (entry.logon_type === "Interactive" && entry.logon_result === "Success") {
-                  normal++;
-                } else if (entry.logon_result === "Failure") {
-                  failure++;
-                } 
+              if (entry.username === "attacker") {
+                attacker++;
+              } else if (
+                entry.logon_type === "Interactive" &&
+                entry.logon_result === "Success"
+              ) {
+                normal++;
+              } else if (entry.logon_result === "Failure") {
+                failure++;
+              }
             }
           }
         });
@@ -119,8 +125,8 @@ const DeviationsFromNormalBehavior = () => {
         {
           label: "Verkkoliikenteen käyttäytyminen",
           backgroundColor: ["#769643", "#ddd845", "#dd4545"],
-          borderColor: ["#ffffff"],
-          borderWidth: 1,
+          borderColor: ["rgba(105, 1, 59, 1)"],
+          borderWidth: 5,
           data: [normal, failure, attacker],
         },
       ],
@@ -137,9 +143,9 @@ const DeviationsFromNormalBehavior = () => {
   const chartData = processDataForChart();
 
   return (
-    <div className="oneGraph">
+    <div className="Graph2">
       <h2>
-      Verkkoliikenteen käyttäytyminen{" "}
+        Verkkoliikenteen käyttäytyminen{" "}
         {selectedView === "hour"
           ? "viimeisen tunnin"
           : selectedView === "day"
@@ -157,5 +163,3 @@ const DeviationsFromNormalBehavior = () => {
 };
 
 export default DeviationsFromNormalBehavior;
-
-

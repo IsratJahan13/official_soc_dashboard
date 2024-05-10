@@ -38,9 +38,11 @@ const App = () => {
           <div className="flex-row">
             <LogIns />
             <DeviationsFromNormalBehavior />
-            {/* here israts or fourth component */}
           </div>
-          <UnusualDataTransfers />
+          <div className="flex-row">
+            <UnusualDataTransfers />
+            {/* here fourth component */}
+          </div>
         </section>
       </main>
     </>

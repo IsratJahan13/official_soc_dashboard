@@ -172,7 +172,7 @@ const UnusualDataTransfers = () => {
   const chartData = processDataForChart();
 
   return (
-    <div className="Graph2">
+    <div className="Graph3">
       <h2>
         Tietojen siirrot{" "}
         {selectedView === "hour"
