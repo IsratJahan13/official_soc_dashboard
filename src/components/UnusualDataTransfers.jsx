@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import dataService from "../services/Data"; // Import data service
 import Chart from "chart.js/auto"; // Import Chart.js with automatic version management
-import { Bar } from "react-chartjs-2"; // Import Bar component from React Chart.js library
+import { Pie } from "react-chartjs-2"; // Import Bar component from React Chart.js library
 import Filter from "./Filter"; // Import Filter component
 
 const UnusualDataTransfers = () => {
@@ -55,7 +55,7 @@ const UnusualDataTransfers = () => {
     let actionAllowed = 0;
     let actionDenied = 0;
     let actionBlocked = 0;
-    let actionTypeDanger = 0;
+    let actionTypeDDoS = 0;
 
     if (filteredData && filteredData.length > 0) {
       const currentTime = new Date();
@@ -67,26 +67,18 @@ const UnusualDataTransfers = () => {
         filteredData.forEach((entry) => {
           const entryTime = new Date(entry.timestamp);
           if (entryTime >= oneHourAgo && entryTime <= currentTime) {
-            if (
-              (entry.action === "allowed" || entry.action === "forwarded") &&
-              (entry.attack_type !== null || entry.attack_traffic !== null)
-            ) {
-              actionTypeDanger++;
-            } else if (
-              entry.action === "allowed" ||
-              entry.action === "forwarded"
-            ) {
+            if (entry.action === "allowed" || entry.action === "forwarded") {
               actionAllowed++;
             } else if (entry.action === "denied") {
               actionDenied++;
+              if (entry.attack_type === "DDoS") {
+                actionTypeDDoS++;
+              }
             } else if (entry.action === "blocked") {
               actionBlocked++;
             }
           }
         });
-        console.log(
-          `Action counts for the last hour: Allowed ${actionAllowed}, Denied ${actionDenied}, Blocked ${actionBlocked}, TypeDanger ${actionTypeDanger}`
-        );
       } else {
         // Process data for other views (day, week) according to the original logic
         filteredData.forEach((entry) => {
@@ -96,18 +88,13 @@ const UnusualDataTransfers = () => {
               currentTime.getTime() - 24 * 60 * 60 * 1000
             );
             if (entryTime >= oneDayAgo && entryTime <= currentTime) {
-              if (
-                (entry.action === "allowed" || entry.action === "forwarded") &&
-                (entry.attack_type !== null || entry.attack_traffic !== null)
-              ) {
-                actionTypeDanger++;
-              } else if (
-                entry.action === "allowed" ||
-                entry.action === "forwarded"
-              ) {
+              if (entry.action === "allowed" || entry.action === "forwarded") {
                 actionAllowed++;
               } else if (entry.action === "denied") {
                 actionDenied++;
+                if (entry.attack_type === "DDoS") {
+                  actionTypeDDoS++;
+                }
               } else if (entry.action === "blocked") {
                 actionBlocked++;
               }
@@ -117,29 +104,19 @@ const UnusualDataTransfers = () => {
               currentTime.getTime() - 7 * 24 * 60 * 60 * 1000
             );
             if (entryTime >= oneWeekAgo && entryTime <= currentTime) {
-              if (
-                (entry.action === "allowed" || entry.action === "forwarded") &&
-                (entry.attack_type !== null || entry.attack_traffic !== null)
-              ) {
-                actionTypeDanger++;
-              } else if (
-                entry.action === "allowed" ||
-                entry.action === "forwarded"
-              ) {
+              if (entry.action === "allowed" || entry.action === "forwarded") {
                 actionAllowed++;
               } else if (entry.action === "denied") {
                 actionDenied++;
+                if (entry.attack_type === "DDoS") {
+                  actionTypeDDoS++;
+                }
               } else if (entry.action === "blocked") {
                 actionBlocked++;
               }
             }
           }
         });
-        // console.log(
-        //   `Kirjautumiset viimeisen ${
-        //     selectedView === "day" ? "päivän" : "viikon"
-        //   } aikana: Onnistuneet ${successfulLogins}, Epäonnistuneet ${failedLogins}`
-        // );
       }
     }
 
@@ -148,20 +125,24 @@ const UnusualDataTransfers = () => {
       labels: [
         "Sallitut",
         "Kielletyt",
+        "Palvelunestohyökkäykset/kielletyt",
         "Estetyt",
-        "Korkea määrä siirtoja/ haittaohjelmatapahtuma",
       ],
       datasets: [
         {
-          label: "Tietojen siirrot",
-          backgroundColor: ["#769643", "#dd4545", "#ddd845", "#b68d3a"],
-          borderColor: ["#ffffff"],
-          borderWidth: 1,
-          data: [actionAllowed, actionDenied, actionBlocked, actionTypeDanger],
+          label: "Tietojen siirrot reitittimelle",
+          backgroundColor: ["#769643", "#dd4545", "#b68d3a", "#ddd845"],
+          borderColor: ["rgba(105, 1, 59, 1)"],
+          borderWidth: 5,
+          data: [
+            actionAllowed,
+            actionDenied - actionTypeDDoS, // Ei sisällä DDoS-määrää
+            actionTypeDDoS, // DDoS-määrä erillisenä lohkona
+            actionBlocked,
+          ],
         },
       ],
     };
-
     return chartData; // Return chart data
   };
 
@@ -181,11 +162,6 @@ const UnusualDataTransfers = () => {
         },
       },
     },
-    plugins: {
-      legend: {
-        display: false, // Takes the legend off (on top of scale)
-      },
-    },
   };
 
   const handleViewSelect = (view) => {
@@ -196,7 +172,7 @@ const UnusualDataTransfers = () => {
   const chartData = processDataForChart();
 
   return (
-    <div className="oneGraph">
+    <div className="Graph2">
       <h2>
         Tietojen siirrot{" "}
         {selectedView === "hour"
@@ -206,7 +182,7 @@ const UnusualDataTransfers = () => {
           : "viimeisen viikon"}{" "}
         aikana
       </h2>
-      <Bar data={chartData} options={options} />
+      <Pie data={chartData} options={options} />
       <section className="chartLogSection">
         <button className="logButton">Tarkastle lokeja</button>
         <Filter selectedView={selectedView} onSelect={handleViewSelect} />
