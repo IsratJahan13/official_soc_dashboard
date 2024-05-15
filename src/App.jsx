@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import LogIns from "./components/LogIns";
 import UnusualDataTransfers from "./components/UnusualDataTransfers";
 import DeviationsFromNormalBehavior from "./components/DaviationsFromNormalBehavior";
+import Malware from "./components/Malware";
 
 const App = () => {
   return (
@@ -37,11 +38,12 @@ const App = () => {
         <section className="graphs-section">
           <div className="flex-row">
             <LogIns />
-            <DeviationsFromNormalBehavior />
+            <UnusualDataTransfers />
           </div>
           <div className="flex-row">
-            <UnusualDataTransfers />
-            {/* here fourth component */}
+            <DeviationsFromNormalBehavior />
+
+            <Malware />
           </div>
         </section>
       </main>

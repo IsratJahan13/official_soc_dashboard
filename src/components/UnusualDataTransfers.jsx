@@ -148,18 +148,9 @@ const UnusualDataTransfers = () => {
 
   // Set options for the chart
   const options = {
-    scales: {
-      y: {
-        title: {
-          display: true,
-          text: "Tiedon siirtojen määrä (kpl)",
-          font: {
-            weight: "bold",
-          },
-        },
-        ticks: {
-          stepSize: 1,
-        },
+    plugins: {
+      legend: {
+        position: "left", // Legendan sijainti vasemmalla
       },
     },
   };
