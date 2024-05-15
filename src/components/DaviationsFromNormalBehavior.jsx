@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import dataService from "../services/Data"; // Import data service
-import { Pie } from "react-chartjs-2"; // Import Pie component from React Chart.js library
+import { Doughnut } from "react-chartjs-2"; // Import Pie component from React Chart.js library
 import Filter from "./Filter"; // Import Filter component
 
 const DeviationsFromNormalBehavior = () => {
   // Define state variables
-  const [selectedView, setSelectedView] = useState("hour"); // Defines the selected view (hour or day)
+  const [selectedView, setSelectedView] = useState("day"); // Defines the selected view (hour or day)
   const [filteredData, setFilteredData] = useState([]); // Initialize filtered data as an empty array
 
   // Fetch data on initial render and whenever the selected view changes
@@ -32,7 +32,7 @@ const DeviationsFromNormalBehavior = () => {
             );
             break;
           default:
-            startTime = new Date(currentTime.getTime() - 60 * 60 * 1000);
+            startTime = new Date(currentTime.getTime() - 24 * 60 * 60 * 1000);
         }
 
         // Filter data for the last hour
@@ -162,7 +162,7 @@ const DeviationsFromNormalBehavior = () => {
           : "viimeisen viikon"}{" "}
         aikana
       </h2>
-      <Pie data={chartData} options={options} />
+      <Doughnut data={chartData} options={options} />
       <section className="chartLogSection">
         <button className="logButton">Tarkastle lokeja</button>
         <Filter selectedView={selectedView} onSelect={handleViewSelect} />
