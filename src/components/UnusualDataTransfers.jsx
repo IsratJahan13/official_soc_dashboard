@@ -6,7 +6,7 @@ import Filter from "./Filter"; // Import Filter component
 
 const UnusualDataTransfers = () => {
   // Define state variables
-  const [selectedView, setSelectedView] = useState("hour"); // Defines the selected view (hour or day)
+  const [selectedView, setSelectedView] = useState("day"); // Defines the selected view (hour or day)
   const [filteredData, setFilteredData] = useState([]); // Initialize filtered data as an empty array
 
   // Fetch data on initial render and whenever the selected view changes
@@ -33,7 +33,7 @@ const UnusualDataTransfers = () => {
             );
             break;
           default:
-            startTime = new Date(currentTime.getTime() - 60 * 60 * 1000);
+            startTime = new Date(currentTime.getTime() - 24 * 60 * 60 * 1000);
         }
 
         // Filter data for the last hour

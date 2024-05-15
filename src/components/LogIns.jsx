@@ -6,7 +6,7 @@ import Filter from "./Filter"; // Import Filter component
 
 const LogIns = () => {
   // Define state variables
-  const [selectedView, setSelectedView] = useState("hour"); // Defines the selected view (hour or day)
+  const [selectedView, setSelectedView] = useState("day"); // Defines the selected view (hour or day)
   const [filteredData, setFilteredData] = useState([]); // Initialize filtered data as an empty array
 
   // Fetch data on initial render and whenever the selected view changes
@@ -38,7 +38,7 @@ const LogIns = () => {
             );
             break;
           default:
-            startTime = new Date(currentTime.getTime() - 60 * 60 * 1000);
+            startTime = new Date(currentTime.getTime() - 24 * 60 * 60 * 1000);
         }
 
         // Filter data for the last hour
@@ -62,7 +62,6 @@ const LogIns = () => {
     let failedLogins_tyoAsema = 0;
     let successfulLogins_palvelin = 0;
     let failedLogins_palvelin = 0;
-    let abnormalActivity_palvelin = 0;
 
     if (filteredData && filteredData.length > 0) {
       const currentTime = new Date();
@@ -88,8 +87,6 @@ const LogIns = () => {
               entry.status === "failed"
             ) {
               failedLogins_palvelin++;
-            } else if (entry.event_type === "abnormal_activity") {
-              abnormalActivity_palvelin++;
             }
           }
         });
@@ -116,8 +113,6 @@ const LogIns = () => {
                 entry.status === "failed"
               ) {
                 failedLogins_palvelin++;
-              } else if (entry.event_type === "abnormal_activity") {
-                abnormalActivity_palvelin++;
               }
             }
           } else if (selectedView === "week") {
@@ -139,8 +134,6 @@ const LogIns = () => {
                 entry.status === "failed"
               ) {
                 failedLogins_palvelin++;
-              } else if (entry.event_type === "abnormal_activity") {
-                abnormalActivity_palvelin++;
               }
             }
           }
@@ -150,11 +143,7 @@ const LogIns = () => {
 
     // Prepare data object for the bar chart
     const chartData = {
-      labels: [
-        "Onnistuneet",
-        "Epäonnistuneet",
-        "Epätavallinen kirjautumistoiminta",
-      ],
+      labels: ["Onnistuneet", "Epäonnistuneet"],
       datasets: [
         {
           label: "Sisäänkirjautumiset työasemalle",
@@ -168,11 +157,7 @@ const LogIns = () => {
           backgroundColor: ["#769643", "#dd4545", "#b68d3a"],
           borderColor: ["rgb(0, 132, 255)"],
           borderWidth: 5,
-          data: [
-            successfulLogins_palvelin,
-            failedLogins_palvelin,
-            abnormalActivity_palvelin,
-          ],
+          data: [successfulLogins_palvelin, failedLogins_palvelin],
         },
       ],
     };

@@ -8,6 +8,7 @@ import LogIns from "./components/LogIns";
 import UnusualDataTransfers from "./components/UnusualDataTransfers";
 import DeviationsFromNormalBehavior from "./components/DaviationsFromNormalBehavior";
 import Malware from "./components/Malware";
+import AuthenticationVerificationEvents from "./components/AuthenticationVerificationEvents";
 
 const App = () => {
   return (
@@ -37,14 +38,17 @@ const App = () => {
         </section>
         <section className="graphs-section">
           <div className="flex-row">
-            <LogIns />
-            <UnusualDataTransfers />
+            <div className="flex-column">
+              <LogIns />
+              <AuthenticationVerificationEvents />
+              <Malware />
+            </div>
+            <div className="flex-column">
+              <UnusualDataTransfers />
+              <DeviationsFromNormalBehavior />
+            </div>
           </div>
-          <div className="flex-row">
-            <DeviationsFromNormalBehavior />
-
-            <Malware />
-          </div>
+          <div className="flex-row"></div>
         </section>
       </main>
     </>
