@@ -1,22 +1,19 @@
 import React from "react";
 import bcLogo from "../assets/BC-logo.png";
-import darkmodeIcon from "../assets/darkmode.svg";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Header = () => {
   return (
     <header>
-      <figure className="bc-logo-frame">
-        <img src={bcLogo} className="bc-logo" alt="BC logo"></img>
-      </figure>
+      <div>
+        <figure className="bc-logo-frame">
+          <img src={bcLogo} className="bc-logo" alt="BC logo" />
+        </figure>
+      </div>
       <h1>SOC Dashboard</h1>
-      <button className="mode-button">
-        Dark mode
-        <span>
-          <figure className="mode-frame">
-            <img className="darkmode-icon" src={darkmodeIcon}></img>
-          </figure>
-        </span>
-      </button>
+      <div className="toggle-container">
+        <DarkModeToggle />
+      </div>
     </header>
   );
 };

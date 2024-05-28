@@ -203,7 +203,6 @@ const LogIns = () => {
       </h2>
       <Bar data={chartData} options={options} />
       <section className="chartLogSection">
-        <button className="logButton">Tarkastle lokeja</button>
         <Filter selectedView={selectedView} onSelect={handleViewSelect} />
       </section>
     </div>

@@ -3,6 +3,7 @@ import dataService from "../services/Data"; // Import data service
 import Chart from "chart.js/auto"; // Import Chart.js with automatic version management
 import { Bar } from "react-chartjs-2"; // Import Bar component from React Chart.js library
 import Filter from "./Filter"; // Import Filter component
+import { color } from "chart.js/helpers";
 
 const AuthenticationVerificationEvents = () => {
   // Define state variables
@@ -272,7 +273,7 @@ const AuthenticationVerificationEvents = () => {
       y: {
         title: {
           display: true,
-          text: "Tunnistautumis- ja varmennustapahtumien määrät (kpl)",
+          text: "Tapahtumien määrät (kpl)",
           font: {
             weight: "bold",
           },
@@ -311,7 +312,6 @@ const AuthenticationVerificationEvents = () => {
       </h2>
       <Bar data={chartData} options={options} />
       <section className="chartLogSection">
-        <button className="logButton">Tarkastle lokeja</button>
         <Filter selectedView={selectedView} onSelect={handleViewSelect} />
       </section>
     </div>

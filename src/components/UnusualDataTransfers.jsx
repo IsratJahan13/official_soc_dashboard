@@ -175,7 +175,6 @@ const UnusualDataTransfers = () => {
       </h2>
       <Pie data={chartData} options={options} />
       <section className="chartLogSection">
-        <button className="logButton">Tarkastle lokeja</button>
         <Filter selectedView={selectedView} onSelect={handleViewSelect} />
       </section>
     </div>
