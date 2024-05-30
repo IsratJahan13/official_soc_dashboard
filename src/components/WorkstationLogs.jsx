@@ -9,7 +9,7 @@ const WorkstationLogs = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await dataService.getAllData("/tyo_asema");
+        const response = await dataService.getAllData("/tyoasema");
         const currentTime = new Date();
         let startTime;
 

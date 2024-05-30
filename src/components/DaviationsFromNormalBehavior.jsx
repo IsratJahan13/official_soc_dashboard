@@ -13,7 +13,7 @@ const DeviationsFromNormalBehavior = () => {
     const fetchData = async () => {
       try {
         // Fetch data from the server
-        const response = await dataService.getAllData("/tyo_asema");
+        const response = await dataService.getAllData("/tyoasema");
         console.log(response.data);
         const currentTime = new Date();
         let startTime;

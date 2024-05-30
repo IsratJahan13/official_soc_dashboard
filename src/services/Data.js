@@ -1,5 +1,6 @@
 import axios from "axios";
-const apiUrl = "http://localhost:3001";
+const apiUrl =
+  "https://app-soc-data-server.wonderfulcliff-356171e4.northeurope.azurecontainerapps.io/dynlogs";
 
 const getAllData = (mocFileName) => {
   return axios.get(apiUrl + mocFileName);

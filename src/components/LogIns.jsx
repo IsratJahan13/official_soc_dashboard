@@ -14,7 +14,7 @@ const LogIns = () => {
     const fetchData = async () => {
       try {
         // Fetch data from the server
-        const response1 = await dataService.getAllData("/tyo_asema");
+        const response1 = await dataService.getAllData("/tyoasema");
         const response2 = await dataService.getAllData("/palvelin");
 
         // Unite both datas
