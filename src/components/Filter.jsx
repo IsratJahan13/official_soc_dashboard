@@ -1,6 +1,6 @@
 import React from "react";
 
-const Filter = ({ selectedView, onSelect }) => {
+const Filter = ({ selectedView, onSelect, total }) => {
   return (
     <section className="optionsSection">
       <ul>
@@ -35,6 +35,10 @@ const Filter = ({ selectedView, onSelect }) => {
           </button>
         </li>
       </ul>
+      <div className="eventTotal">
+        <p>Tapahtumien määrä yhteensä:</p>
+        {total}
+      </div>
     </section>
   );
 };

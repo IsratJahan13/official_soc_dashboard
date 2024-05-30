@@ -61,6 +61,14 @@ const DarkModeToggle = () => {
       header.style.color = darkMode ? "#fff" : "#000";
       header.style.border = darkMode ? "#fff 1px solid" : "unset";
     }
+
+    const totals = document.querySelectorAll(".eventTotal");
+    totals.forEach((total) => {
+      total.style.backgroundColor = darkMode
+        ? "rgb(117 100 100)"
+        : "rgba(251, 239, 234, 1)";
+      total.style.border = darkMode ? "#fff 0.5px solid" : "1px solid #5f0034";
+    });
   }, [darkMode]);
 
   return (
