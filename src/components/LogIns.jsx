@@ -8,6 +8,7 @@ const LogIns = () => {
   // Define state variables
   const [selectedView, setSelectedView] = useState("day"); // Defines the selected view (hour or day)
   const [filteredData, setFilteredData] = useState([]); // Initialize filtered data as an empty array
+  const [total, setTotal] = useState(0);
 
   // Fetch data on initial render and whenever the selected view changes
   useEffect(() => {
@@ -47,9 +48,11 @@ const LogIns = () => {
         );
         // Set the filtered data
         setFilteredData(filtered);
+        setTotal(filtered.length);
       } catch (error) {
         console.error("Error fetching data:", error); // Log error if data fetching fails
         setFilteredData([]);
+        setTotal(0);
       }
     };
 
@@ -141,23 +144,22 @@ const LogIns = () => {
       }
     }
 
-    // Prepare data object for the bar chart
     const chartData = {
-      labels: ["Onnistuneet", "Epäonnistuneet"],
+      labels: ["Työasema", "Palvelin"],
       datasets: [
         {
-          label: "Sisäänkirjautumiset työasemalle",
-          backgroundColor: ["#769643", "#dd4545"],
+          label: "Onnistuneet",
+          backgroundColor: "#779643",
           borderColor: ["rgba(105, 1, 59, 1)"],
           borderWidth: 5,
-          data: [successfulLogins_tyoAsema, failedLogins_tyoAsema],
+          data: [successfulLogins_tyoAsema, successfulLogins_palvelin],
         },
         {
-          label: "Sisäänkirjautumiset palvelimelle",
-          backgroundColor: ["#769643", "#dd4545", "#b68d3a"],
-          borderColor: ["rgb(0, 132, 255)"],
+          label: "Epäonnistuneet",
+          backgroundColor: "#DD4544",
+          borderColor: ["rgba(105, 1, 59, 1)"],
           borderWidth: 5,
-          data: [successfulLogins_palvelin, failedLogins_palvelin],
+          data: [failedLogins_tyoAsema, failedLogins_palvelin],
         },
       ],
     };
@@ -203,7 +205,11 @@ const LogIns = () => {
       </h2>
       <Bar data={chartData} options={options} />
       <section className="chartLogSection">
-        <Filter selectedView={selectedView} onSelect={handleViewSelect} />
+        <Filter
+          selectedView={selectedView}
+          onSelect={handleViewSelect}
+          total={total}
+        />
       </section>
     </div>
   );
