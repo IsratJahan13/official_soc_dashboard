@@ -9,7 +9,7 @@ const AuthenticationVerificationEvents = () => {
   // Define state variables
   const [selectedView, setSelectedView] = useState("day"); // Defines the selected view (hour or day)
   const [filteredData, setFilteredData] = useState([]); // Initialize filtered data as an empty array
-
+  const [total, setTotal] = useState(0);
   // Fetch data on initial render and whenever the selected view changes
   useEffect(() => {
     const fetchData = async () => {
@@ -53,8 +53,10 @@ const AuthenticationVerificationEvents = () => {
         );
         // Set the filtered data
         setFilteredData(filtered);
+        setTotal(filtered.length);
       } catch (error) {
         console.error("Error fetching data:", error); // Log error if data fetching fails
+        setTotal(0);
       }
     };
 
@@ -312,7 +314,11 @@ const AuthenticationVerificationEvents = () => {
       </h2>
       <Bar data={chartData} options={options} />
       <section className="chartLogSection">
-        <Filter selectedView={selectedView} onSelect={handleViewSelect} />
+        <Filter
+          selectedView={selectedView}
+          onSelect={handleViewSelect}
+          total={total}
+        />
       </section>
     </div>
   );

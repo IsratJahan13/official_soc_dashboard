@@ -36,7 +36,7 @@ const Filter = ({ selectedView, onSelect, total }) => {
         </li>
       </ul>
       <div className="eventTotal">
-        <p>Tapahtumien määrä yhteensä:</p>
+        <p className="eventTotalP">Tapahtumien määrä yhteensä:</p>
         {total}
       </div>
     </section>

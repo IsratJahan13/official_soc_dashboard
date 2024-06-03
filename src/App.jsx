@@ -1,5 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  NavLink,
+} from "react-router-dom";
 import exitIcon from "./assets/exit.svg";
 import "./styles/Reset.css";
 import "./styles/App.css";
@@ -14,21 +19,23 @@ import FirewallLogs from "./components/FirewallLogs";
 import RouterLogs from "./components/RouterLogs";
 import WorkstationLogs from "./components/WorkstationLogs";
 
-const Home = () => (
-  <>
-    <div className="flex-row">
-      <div className="flex-column">
-        <LogIns />
-        <AuthenticationVerificationEvents />
-        <Malware />
+const Home = () => {
+  return (
+    <>
+      <div className="flex-row">
+        <div className="flex-column">
+          <LogIns />
+          <AuthenticationVerificationEvents />
+          <Malware />
+        </div>
+        <div className="flex-column">
+          <UnusualDataTransfers />
+          <DeviationsFromNormalBehavior />
+        </div>
       </div>
-      <div className="flex-column">
-        <UnusualDataTransfers />
-        <DeviationsFromNormalBehavior />
-      </div>
-    </div>
-  </>
-);
+    </>
+  );
+};
 
 const App = () => {
   return (
@@ -40,19 +47,44 @@ const App = () => {
             <nav>
               <ul className="nav-li-items">
                 <li>
-                  <Link to="/">Etusivu</Link>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    Etusivu
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/server-logs">Palvelinlokit</Link>
+                  <NavLink
+                    to="/server-logs"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    Palvelinlokit
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/firewall-logs">Palomuurin lokit</Link>
+                  <NavLink
+                    to="/firewall-logs"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    Palomuurin lokit
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/router-logs">Reitittimen lokit</Link>
+                  <NavLink
+                    to="/router-logs"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    Reitittimen lokit
+                  </NavLink>
                 </li>
                 <li>
-                  <Link to="/workstation-logs">Työaseman lokit</Link>
+                  <NavLink
+                    to="/workstation-logs"
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                  >
+                    Työaseman lokit
+                  </NavLink>
                 </li>
               </ul>
             </nav>
