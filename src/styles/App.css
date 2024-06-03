@@ -25,6 +25,12 @@ header > * {
   flex: 1;
 }
 
+.headerDark {
+  background-color: #1d1c1c;
+  color: #fff;
+  border: #fff 1px solid;
+}
+
 h1 {
   font-family: "Morion Beta Regular";
   color: rgba(252, 224, 209, 1);
@@ -133,7 +139,7 @@ h3 {
 .nav-li-items li:hover,
 .nav-li-items li a:hover {
   background-color: rgba(251, 239, 234, 1);
-  color: rgba(181, 118, 135, 1);
+  color: #f39d6e;
 }
 
 .main-section {
@@ -148,8 +154,6 @@ h3 {
 .left-sidebar {
   display: flex;
   flex-direction: column;
-  /* flex-grow: 0; */
-  /* width: 10%; */
   justify-content: space-between;
 }
 
@@ -157,7 +161,6 @@ h3 {
 .nav-li-items {
   margin-block-start: 5rem;
   margin-inline-start: 2rem;
-  /* border-collapse: collapse; */
 }
 .nav-li-items li {
   padding: 1rem;
@@ -172,6 +175,11 @@ h3 {
   text-decoration: unset;
   color: black;
 }
+
+.nav-li-items li a.active {
+  color: #f39d6e;
+}
+
 /* GRAPHS-SECTION */
 .graphs-section {
   background-color: white;
@@ -179,6 +187,12 @@ h3 {
   border-radius: 0 0 5px 5px;
   flex-grow: 1;
   padding: 1rem;
+  color: black;
+}
+.graphs-sectionDark {
+  background-color: #1d1c1c;
+  color: #fff;
+  border: #fff 1px solid;
 }
 
 .flex-row {
@@ -194,15 +208,18 @@ h3 {
   display: flex;
   flex-direction: column;
 }
-/* .chartLogSection {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
+.chartLogSection {
   background-color: white;
-  padding: 1rem;
-} */
+  border: unset;
+  border-radius: 0px;
+  color: black;
+}
+.chartLogSectionDark {
+  background-color: rgb(77 71 71);
+  border: #fff 1px solid;
+  border-radius: 10px;
+  color: white;
+}
 
 .optionsSection {
   border: 0.5px solid grey;
@@ -220,10 +237,20 @@ h3 {
   padding: 1rem;
   text-align: center;
   align-content: center;
-  /* border-radius: 50%; */
   flex: 1;
   background-color: rgba(251, 239, 234, 1);
   font-size: 1.4rem;
+  font-style: oblique;
+  border-radius: 2px;
+}
+
+.eventTotalDark {
+  background-color: rgb(117 100 100);
+  border: #fff 0.5px solid;
+}
+
+.eventTotalP {
+  margin-block-end: 1rem;
 }
 
 .Graph1,
@@ -233,6 +260,18 @@ h3 {
   border: 0.5px solid black;
   padding: 1rem;
   margin: 1rem;
+  background-color: white;
+  color: black;
+}
+.Graph1Dark,
+.Graph2Dark,
+.Graph3Dark,
+.Graph4Dark {
+  border: 0.5px solid rgba(251, 239, 234, 1);
+  padding: 1rem;
+  margin: 1rem;
+  background-color: #393333;
+  color: white;
 }
 
 /* TAULUKOT */
@@ -247,16 +286,35 @@ td {
   padding: 1rem;
   text-align: center;
   vertical-align: middle;
+  color: black;
+  font-size: 1.4rem;
 }
 
 th {
   background-color: #f2f2f2;
-  /* text-align: left; */
 }
 
+td {
+  background-color: white;
+}
+
+.thDark {
+  background-color: #606060;
+  color: white;
+}
+
+.tdDark {
+  background-color: #424141;
+  color: white;
+}
+
+label {
+  margin-inline-start: 3rem;
+}
 #timeRange {
   margin-inline-start: 2rem;
-  height: 3rem;
+  padding: 1rem;
+  height: 4rem;
   font-family: "Gotham Light";
   margin-block-end: 2rem;
 }

@@ -10,64 +10,68 @@ const DarkModeToggle = () => {
   };
 
   useEffect(() => {
-    // Muuta bodyn taustaväriä tilan mukaan
     document.body.style.backgroundColor = darkMode
       ? "#000"
       : "rgba(252, 224, 209, 1)";
 
     const graphsSection = document.querySelector(".graphs-section");
     if (graphsSection) {
-      graphsSection.style.backgroundColor = darkMode ? "#1d1c1c" : "#fff";
-      graphsSection.style.color = darkMode ? "#fff" : "rgb(0, 0, 0)";
-      graphsSection.style.border = darkMode
-        ? "#fff 1px solid"
-        : "1px solid black";
+      graphsSection.classList.toggle("graphs-sectionDark", darkMode);
     }
 
     const chartLogSections = document.querySelectorAll(".chartLogSection");
-    chartLogSections.forEach((chartLogSection) => {
-      chartLogSection.style.backgroundColor = darkMode
-        ? "rgb(77 71 71)"
-        : "#fff";
-      chartLogSection.style.border = darkMode ? "#fff" : "rgb(0, 0, 0)";
-      chartLogSection.style.borderRadius = darkMode ? "10px" : "0";
-    });
+    if (chartLogSections) {
+      chartLogSections.forEach((chartLogSection) => {
+        chartLogSection.classList.toggle("chartLogSectionDark", darkMode);
+      });
+    }
 
     const graphs = document.querySelectorAll(
       ".Graph1, .Graph2, .Graph3, .Graph4"
     );
-    graphs.forEach((graph) => {
-      graph.style.border = darkMode
-        ? "0.5px solid rgba(251, 239, 234, 1)"
-        : "0.5px solid black";
-      graph.style.backgroundColor = darkMode ? "#393333" : "#fff";
-    });
+    if (graphs) {
+      graphs.forEach((graph) => {
+        graph.classList.toggle(
+          "Graph1Dark",
+          darkMode && graph.classList.contains("Graph1")
+        );
+        graph.classList.toggle(
+          "Graph2Dark",
+          darkMode && graph.classList.contains("Graph2")
+        );
+        graph.classList.toggle(
+          "Graph3Dark",
+          darkMode && graph.classList.contains("Graph3")
+        );
+        graph.classList.toggle(
+          "Graph4Dark",
+          darkMode && graph.classList.contains("Graph4")
+        );
+      });
+    }
 
-    const tablerows = document.querySelectorAll("th");
-    tablerows.forEach((th) => {
-      th.style.backgroundColor = darkMode ? "#606060" : "#ededed";
-    });
+    const tableHeaders = document.querySelectorAll("th");
+    if (tableHeaders) {
+      tableHeaders.forEach((th) => {
+        th.classList.toggle("thDark", darkMode);
+      });
+    }
 
-    const tabledatas = document.querySelectorAll("td");
-    tabledatas.forEach((td) => {
-      td.style.backgroundColor = darkMode ? "#424141" : "#fff";
-    });
+    const tableData = document.querySelectorAll("td");
+    if (tableData) {
+      tableData.forEach((td) => {
+        td.classList.toggle("tdDark", darkMode);
+      });
+    }
 
     const header = document.querySelector("header");
     if (header) {
-      header.style.backgroundColor = darkMode
-        ? "#1d1c1c"
-        : "rgba(105, 1, 59, 1)";
-      header.style.color = darkMode ? "#fff" : "#000";
-      header.style.border = darkMode ? "#fff 1px solid" : "unset";
+      header.classList.toggle("headerDark", darkMode);
     }
 
     const totals = document.querySelectorAll(".eventTotal");
     totals.forEach((total) => {
-      total.style.backgroundColor = darkMode
-        ? "rgb(117 100 100)"
-        : "rgba(251, 239, 234, 1)";
-      total.style.border = darkMode ? "#fff 0.5px solid" : "1px solid #5f0034";
+      total.classList.toggle("eventTotalDark", darkMode);
     });
   }, [darkMode]);
 

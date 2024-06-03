@@ -51,7 +51,7 @@ const LogIns = () => {
         setTotal(filtered.length);
       } catch (error) {
         console.error("Error fetching data:", error); // Log error if data fetching fails
-        setFilteredData([]);
+        // setFilteredData([]);
         setTotal(0);
       }
     };
