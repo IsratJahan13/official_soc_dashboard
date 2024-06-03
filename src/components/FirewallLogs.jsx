@@ -1,19 +1,49 @@
 import React, { useState, useEffect } from "react";
 import dataService from "../services/Data";
+import LogTimeFilter from "./LogTimeFilter";
 
 const FirewallLogs = () => {
   const [serverLogs, setServerLogs] = useState([]);
+  const [selectedTimeRange, setSelectedTimeRange] = useState("day");
 
   useEffect(() => {
-    dataService
-      .getAllData("/palomuuri")
-      .then((response) => {
-        setServerLogs(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching server logs:", error);
-      });
-  }, []);
+    const fetchData = async () => {
+      try {
+        const response = await dataService.getAllData("/palomuuri");
+        const currentTime = new Date();
+        let startTime;
+
+        switch (selectedTimeRange) {
+          case "hour":
+            startTime = new Date(currentTime.getTime() - 60 * 60 * 1000);
+            break;
+          case "day":
+            startTime = new Date(currentTime.getTime() - 24 * 60 * 60 * 1000);
+            break;
+          case "week":
+            startTime = new Date(
+              currentTime.getTime() - 7 * 24 * 60 * 60 * 1000
+            );
+            break;
+          case "all":
+            startTime = new Date(0);
+            break;
+          default:
+            startTime = new Date(currentTime.getTime() - 24 * 60 * 60 * 1000);
+        }
+
+        const filteredLogs = response.data.filter(
+          (log) => new Date(log.timestamp) >= startTime
+        );
+
+        setServerLogs(filteredLogs);
+      } catch (error) {
+        console.error("Error fetching firewall logs:", error);
+      }
+    };
+
+    fetchData();
+  }, [selectedTimeRange]);
 
   const formatDateTime = (timestamp) => {
     const date = new Date(timestamp);
@@ -28,9 +58,17 @@ const FirewallLogs = () => {
     );
   };
 
+  const handleTimeRangeChange = (event) => {
+    setSelectedTimeRange(event.target.value);
+  };
+
   return (
     <div>
       <h3>Palomuurin lokit</h3>
+      <LogTimeFilter
+        selectedTimeRange={selectedTimeRange}
+        onTimeRangeChange={handleTimeRangeChange}
+      />
       <table>
         <thead>
           <tr>
