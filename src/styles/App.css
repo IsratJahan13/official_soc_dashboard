@@ -60,6 +60,7 @@ h3 {
 .toggle-container {
   display: flex;
   justify-content: flex-end;
+  align-self: center;
 }
 
 /* BUTTONIEN MUOKKAUKSIA */
@@ -317,4 +318,38 @@ label {
   height: 4rem;
   font-family: "Gotham Light";
   margin-block-end: 2rem;
+}
+
+/* Tabletti */
+@media only screen and (max-width: 768px) {
+  .flex-row {
+    flex-direction: column;
+  }
+}
+/* Mobiili */
+@media only screen and (max-width: 425px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .main-section {
+    margin-block-start: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: end;
+  }
+  .nav-li-items {
+    margin-block-start: 1rem;
+    margin-inline-start: 1rem;
+  }
+  .nav-li-items li {
+    border-radius: 5px;
+    margin-block-end: 0.3rem;
+  }
+  .exit-button {
+    margin-block-end: 1rem;
+  }
+  .toggle-container {
+    align-self: center;
+  }
 }

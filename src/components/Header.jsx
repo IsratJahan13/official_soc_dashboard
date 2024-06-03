@@ -10,7 +10,7 @@ const Header = () => {
           <img src={bcLogo} className="bc-logo" alt="BC logo" />
         </figure>
       </div>
-      <h1>SOC Dashboard</h1>
+      <h1>SOC DASHBOARD</h1>
       <div className="toggle-container">
         <DarkModeToggle />
       </div>
