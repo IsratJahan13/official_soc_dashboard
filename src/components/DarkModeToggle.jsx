@@ -3,10 +3,16 @@ import darkmodeIcon from "../assets/darkmode.svg";
 import brightmodeIcon from "../assets/brightmode.svg";
 
 const DarkModeToggle = () => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(
+    () => localStorage.getItem("darkMode") === "true"
+  );
 
   const toggleMode = () => {
-    setDarkMode(!darkMode);
+    setDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("darkMode", newMode);
+      return newMode;
+    });
   };
 
   useEffect(() => {
@@ -92,3 +98,49 @@ const DarkModeToggle = () => {
 };
 
 export default DarkModeToggle;
+
+// useEffect(() => {
+//   if (darkMode) {
+//     document.documentElement.setAttribute("data-theme", "dark");
+//   } else {
+//     document.documentElement.removeAttribute("data-theme");
+//   }
+// }, [darkMode]);
+
+// :root {
+//   --background-color: rgba(252, 224, 209, 1);
+//   --text-color: #000;
+// }
+
+// [data-theme="dark"] {
+//   --background-color: #000;
+//   --text-color: #fff;
+// }
+
+// body {
+//   background-color: var(--background-color);
+//   color: var(--text-color);
+// }
+/* Esimerkki: Lisää muita teema-tyylejä */
+// .graphs-section {
+// }
+
+// [data-theme="dark"] .graphs-section {
+// }
+
+// .chartLogSection {
+// }
+
+// [data-theme="dark"] .chartLogSection {
+// }
+// .graphs-section {
+// }
+
+// [data-theme="dark"] .graphs-section {
+// }
+
+// .chartLogSection {
+// }
+
+// [data-theme="dark"] .chartLogSection {
+// }

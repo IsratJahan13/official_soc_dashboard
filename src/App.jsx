@@ -88,14 +88,14 @@ const App = () => {
                 </li>
               </ul>
             </nav>
-            <button className="exit-button">
+            {/* <button className="exit-button">
               <span>
                 <figure className="mode-frame">
                   <img className="exit-icon" src={exitIcon}></img>
                 </figure>
               </span>
               Exit
-            </button>
+            </button> */}
           </section>
           <section className="graphs-section">
             <Routes>
