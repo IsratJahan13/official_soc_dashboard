@@ -18,7 +18,7 @@ const Filter = ({ selectedView, onSelect, total }) => {
           <button
             onClick={() => onSelect("day")}
             className={`optionButtons ${
-              selectedView === "hour" ? "selected" : ""
+              selectedView === "day" ? "selected" : ""
             }`}
           >
             Viimeisen vuorokauden aikana

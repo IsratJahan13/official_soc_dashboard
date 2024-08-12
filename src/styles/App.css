@@ -11,7 +11,7 @@ body {
 
 /* HEADER MUOKKAUKSIA */
 header {
-  border-radius: 5px 5px 0 0;
+  border-radius: 5px;
   background-color: rgba(105, 1, 59, 1);
   padding: 2rem;
   display: flex;
@@ -26,7 +26,7 @@ header > * {
 }
 
 .headerDark {
-  background-color: #1d1c1c;
+  background-color: #333333;
   color: #fff;
   border: #fff 1px solid;
 }
@@ -115,6 +115,10 @@ h3 {
   text-decoration: underline 1px grey;
 }
 
+.optionButtons.selected {
+  color: #f39d6e;
+}
+
 .mode-frame {
   width: 2rem;
 }
@@ -191,7 +195,7 @@ h3 {
   color: black;
 }
 .graphs-sectionDark {
-  background-color: #1d1c1c;
+  background-color: #333333;
   color: #fff;
   border: #fff 1px solid;
 }
@@ -215,12 +219,12 @@ h3 {
   border-radius: 0px;
   color: black;
 }
-.chartLogSectionDark {
+/* .chartLogSectionDark {
   background-color: rgb(77 71 71);
   border: #fff 1px solid;
   border-radius: 10px;
-  color: white;
-}
+  color: white; 
+} */
 
 .optionsSection {
   border: 0.5px solid grey;
@@ -242,13 +246,13 @@ h3 {
   background-color: rgba(251, 239, 234, 1);
   font-size: 1.4rem;
   font-style: oblique;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
-.eventTotalDark {
+/* .eventTotalDark {
   background-color: rgb(117 100 100);
   border: #fff 0.5px solid;
-}
+} */
 
 .eventTotalP {
   margin-block-end: 1rem;
@@ -263,8 +267,9 @@ h3 {
   margin: 1rem;
   background-color: white;
   color: black;
+  border-radius: 5px;
 }
-.Graph1Dark,
+/* .Graph1Dark,
 .Graph2Dark,
 .Graph3Dark,
 .Graph4Dark {
@@ -273,7 +278,7 @@ h3 {
   margin: 1rem;
   background-color: #393333;
   color: white;
-}
+} */
 
 /* TAULUKOT */
 table {
@@ -299,7 +304,7 @@ td {
   background-color: white;
 }
 
-.thDark {
+/* .thDark {
   background-color: #606060;
   color: white;
 }
@@ -307,14 +312,13 @@ td {
 .tdDark {
   background-color: #424141;
   color: white;
-}
+} */
 
 label {
   margin-inline-start: 3rem;
 }
 #timeRange {
   margin-inline-start: 2rem;
-  padding: 1rem;
   height: 4rem;
   font-family: "Gotham Light";
   margin-block-end: 2rem;
