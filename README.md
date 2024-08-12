@@ -8,7 +8,7 @@ Tämä projekti on kehitetty osana koulutehtävää, jossa harjoitellaan nykyaik
 
 Projektin tavoitteena on tarjota käyttäjille selkeä ja tehokas tapa seurata tietoturvaan liittyviä tapahtumia ja komponentteja. Se pyrkii ratkaisemaan ongelman, jossa monimutkaisten tietoturvajärjestelmien hallinta on haastavaa ja vaatii intuitiivisen käyttöliittymän.
 
-## Projektin Tavoite
+## Projektin tavoite
 
 Projektin päämääränä on kehittää yksinkertainen, mutta tehokas hallintapaneeli tietoturvakomponenttien ja tapahtumien hallintaan. Sovellus on suunniteltu helpottamaan tietoturvatiimien työtä tarjoamalla visuaalisia ja reaaliaikaisia tietoja turvallisuusjärjestelmistä.
 
@@ -16,7 +16,7 @@ Projektin päämääränä on kehittää yksinkertainen, mutta tehokas hallintap
 
 Projekti on suunnattu tietoturva-alan ammattilaisille, kehittäjille ja oppijoille, jotka haluavat ymmärtää paremmin, miten hallita ja seurata tietoturvakomponentteja web-pohjaisella käyttöliittymällä.
 
-## Käytetyt Teknologiat
+## Käytetyt teknologiat
 
 - **React**: Käytetään käyttöliittymän rakentamiseen.
 - **Vite**: Moderni kehitystyökalu, joka nopeuttaa kehitysprosessia.
@@ -24,7 +24,7 @@ Projekti on suunnattu tietoturva-alan ammattilaisille, kehittäjille ja oppijoil
 - **CSS**: Käyttöliittymän tyylit.
 - **HTML**: Perusrakenne.
 
-## Live-Demo
+## Live-demo
 
 [Soc dashboard](https://isratjahan13.github.io/official_soc_dashboard/)
 
@@ -44,6 +44,6 @@ Tämä projekti sai inspiraatiota [cyberpitin sivuilta](https://www.cyberbit.com
 
 ## Tekijät
 
-- **Israt Jahan**: Projektin aikataulutus ja Trellon ylläpito. Käyttöliittymän suunnittelu ja sovelluksen logiikan toteutus. Haittaohjelmat-komponentin ja reitittimen tietojen siirrot-komponentin luominen.
-- **Saima445**: Käyttöliittymän suunnittelu ja sovelluksen logiikan toteutus. CSS-tyylittely ja responsiivisen suunnittelun optimointi. Työaseman verkkoliikenteen käyttäytymis-komponentin luominen. Eri teemojen lokien tekeminen. Dark mode-elementin tekeminen.
+- **Israt**: Projektin aikataulutus ja Trellon ylläpito. Käyttöliittymän suunnittelu ja sovelluksen logiikan toteutus. Haittaohjelmat-komponentin ja reitittimen tietojen siirrot-komponentin luominen.
+- **Saima**: Käyttöliittymän suunnittelu ja sovelluksen logiikan toteutus. CSS-tyylittely ja responsiivisen suunnittelun optimointi. Työaseman verkkoliikenteen käyttäytymis-komponentin luominen. Eri teemojen lokien tekeminen. Dark mode-elementin tekeminen.
 - **Madhusmitamis**: Tietoturvaominaisuuksien määrittely ja käyttöliittymän linkkien integraatio. Sisäänkirjautumiset-komponentin ja tunnistautumis- ja varmennustapahtumat-komponentin luominen.
