@@ -39,7 +39,7 @@ Projekti on suunnattu tietoturva-alan ammattilaisille, kehittäjille ja oppijoil
 
 ## Lähteet
 
-Tämä projekti sai inspiraatiota [cyberpitin sivuila](https://www.cyberbit.com/soc-operations/soc-metrics-for-improved-soc-performance/), joka tarjosi perustan hallintapaneelin kehittämiselle. Suurkiitos alkuperäisille kehittäjille, joiden työstä tämä projekti on saanut vaikutteita. Teimme Style Guiden annettujen värien ja fonttien pohjalta, sekä haimme vaikutteita ja tyylejä [Helsinki Business Collegen](https://opiskelija.bc.fi/) verkkosivuilta.
+Tämä projekti sai inspiraatiota [cyberpitin sivuilta](https://www.cyberbit.com/soc-operations/soc-metrics-for-improved-soc-performance/), joka tarjosi perustan hallintapaneelin kehittämiselle. Kiitos alkuperäisille kehittäjille, joiden työstä tämä projekti on saanut vaikutteita. Teimme Style Guiden annettujen värien ja fonttien pohjalta, sekä haimme vaikutteita ja tyylejä [Helsinki Business Collegen](https://opiskelija.bc.fi/) verkkosivuilta.
 ![Style guide](screenshots/soc-dashboard-style-guide.png)
 
 ## Tekijät
