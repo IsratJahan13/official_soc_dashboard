@@ -11,7 +11,7 @@ import "./styles/App.css";
 import Header from "./components/Header";
 import LogIns from "./components/LogIns";
 import UnusualDataTransfers from "./components/UnusualDataTransfers";
-import DeviationsFromNormalBehavior from "./components/DeviationsFromNormalBehavior";
+import DeviationsFromNormalBehavior from "./components/DaviationsFromNormalBehavior";
 import Malware from "./components/Malware";
 import AuthenticationVerificationEvents from "./components/AuthenticationVerificationEvents";
 import ServerLogs from "./components/ServerLogs";
