@@ -11,7 +11,7 @@ import "./styles/App.css";
 import Header from "./components/Header";
 import LogIns from "./components/LogIns";
 import UnusualDataTransfers from "./components/UnusualDataTransfers";
-import DeviationsFromNormalBehavior from "./components/DaviationsFromNormalBehavior";
+import DeviationsFromNormalBehavior from "./components/DeviationsFromNormalBehavior";
 import Malware from "./components/Malware";
 import AuthenticationVerificationEvents from "./components/AuthenticationVerificationEvents";
 import ServerLogs from "./components/ServerLogs";
@@ -39,7 +39,7 @@ const Home = () => {
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/official_soc_dashboard">
       <>
         <Header />
         <main className="main-section">
@@ -88,14 +88,6 @@ const App = () => {
                 </li>
               </ul>
             </nav>
-            {/* <button className="exit-button">
-              <span>
-                <figure className="mode-frame">
-                  <img className="exit-icon" src={exitIcon}></img>
-                </figure>
-              </span>
-              Exit
-            </button> */}
           </section>
           <section className="graphs-section">
             <Routes>
