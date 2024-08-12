@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://isratjahan13.github.io/",
+  "homepage": "https://isratjahan13.github.io/official_soc_dashboard",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
