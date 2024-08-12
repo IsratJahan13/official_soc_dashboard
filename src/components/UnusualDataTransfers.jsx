@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import dataService from "../services/Data"; // Import data service
+import dataService from "../services/Data"; // Import data
 import Chart from "chart.js/auto"; // Import Chart.js with automatic version management
 import { Pie } from "react-chartjs-2"; // Import Bar component from React Chart.js library
 import Filter from "./Filter"; // Import Filter component
 
 const UnusualDataTransfers = () => {
   // Define state variables
-  const [selectedView, setSelectedView] = useState("day"); // Defines the selected view (hour or day)
+  const [selectedView, setSelectedView] = useState("day"); // Defines the selected view
   const [filteredData, setFilteredData] = useState([]); // Initialize filtered data as an empty array
   const [total, setTotal] = useState(0);
   // Fetch data on initial render and whenever the selected view changes
@@ -132,7 +132,7 @@ const UnusualDataTransfers = () => {
   const options = {
     plugins: {
       legend: {
-        position: "left", // Legendan sijainti vasemmalla
+        position: "left",
       },
     },
   };

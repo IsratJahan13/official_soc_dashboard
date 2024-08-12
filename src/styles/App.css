@@ -50,7 +50,7 @@ h3 {
 }
 
 .bc-logo-frame {
-  width: 70%;
+  width: 50%;
 }
 
 .bc-logo {
@@ -227,11 +227,11 @@ h3 {
 } */
 
 .optionsSection {
-  border: 0.5px solid grey;
-  padding: 1rem;
-  border-radius: 5px;
+  border-block-start: 0.5px solid grey;
+  padding: 2rem;
   display: flex;
   flex-direction: row;
+  margin-block-start: 1rem;
 }
 .optionsSection ul {
   flex: 4;
