@@ -26,7 +26,7 @@ Projekti on suunnattu tietoturva-alan ammattilaisille, kehittäjille ja oppijoil
 
 ## Live-Demo
 
-[Linkki live-sivulle](#)
+[Soc dashboard](https://isratjahan13.github.io/official_soc_dashboard/)
 
 ## Kuvakaappaukset
 
