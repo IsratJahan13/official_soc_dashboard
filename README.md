@@ -4,7 +4,7 @@
 
 SOC Dashboard on web-sovellus, joka tarjoaa käyttäjille interaktiivisen ja reaaliaikaisen hallintapaneelin tietoturvakomponenttien seurantaan ja hallintaan.
 
-Projekti on suunniteltu tietoturvan asiantuntijoille ja kehittäjille, jotka tarvitsevat tehokkaita työkaluja tietoturvakomponenttien hallintaan. Tämä projekti on kehitetty osana koulutehtävää, jossa harjoitellaan nykyaikaisten web-teknologioiden käyttöä.
+Tämä projekti on kehitetty osana koulutehtävää, jossa harjoitellaan nykyaikaisten web-teknologioiden käyttöä.
 
 Projektin tavoitteena on tarjota käyttäjille selkeä ja tehokas tapa seurata tietoturvaan liittyviä tapahtumia ja komponentteja. Se pyrkii ratkaisemaan ongelman, jossa monimutkaisten tietoturvajärjestelmien hallinta on haastavaa ja vaatii intuitiivisen käyttöliittymän.
 
