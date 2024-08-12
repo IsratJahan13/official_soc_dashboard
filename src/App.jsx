@@ -20,6 +20,11 @@ import RouterLogs from "./components/RouterLogs";
 import WorkstationLogs from "./components/WorkstationLogs";
 
 const Home = () => {
+  // Tämä useEffect varmistaa, että toiminnot suoritetaan, kun Home-komponentti ladataan ensimmäisen kerran
+  React.useEffect(() => {
+    console.log("Home-komponentti ladattu");
+    // Tässä voit suorittaa esimerkiksi API-kutsut tai muut alustustoimet
+  }, []);
   return (
     <>
       <div className="flex-row">
