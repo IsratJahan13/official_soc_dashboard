@@ -40,6 +40,7 @@ This project is aimed at security professionals, developers, and learners who wa
 ## Sources
 
 This project was inspired by the [Cyberbit website](https://www.cyberbit.com/soc-operations/soc-metrics-for-improved-soc-performance/), which provided the foundation for the dashboard’s development. We developed the style guide based on the given colors and fonts, and we also took inspiration from the styles of the [Helsinki Business College](https://opiskelija.bc.fi/) website.
+
 ![Style guide](screenshots/soc-dashboard-style-guide.png)
 
 ## Contributors
